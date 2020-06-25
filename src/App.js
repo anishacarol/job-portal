@@ -2,12 +2,15 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import JobDetailsPage from "../src/pages/JobDetailsPage/JobDetailsPage";
 import JobListPage from "../src/pages/JobListPage/JobListPage";
-import "./App.css";
+import * as Styled from "./App.styles";
 
 function App() {
   return (
-    <div className="App">
+    <Styled.App>
       <BrowserRouter>
+        <Styled.Header>
+          <h1>Job Portal</h1>
+        </Styled.Header>
         <Switch>
           <Route path="/job-list">
             <JobListPage />
@@ -20,7 +23,7 @@ function App() {
           </Route>
         </Switch>
       </BrowserRouter>
-    </div>
+    </Styled.App>
   );
 }
 
