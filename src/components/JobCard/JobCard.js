@@ -12,7 +12,7 @@ const JobCard = () => {
         <span>full-time</span>
       </Styled.Information>
       <Styled.LinkHolder>
-        <Link to="job-list">Read more..</Link>
+        <Link to="job-details">Read more..</Link>
       </Styled.LinkHolder>
     </Styled.JobCard>
   );
