@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Icon from "../UI/Icon/Icon";
 import * as Styled from "./JobDetails.styles";
 
 const JobDetails = () => {
@@ -11,8 +12,14 @@ const JobDetails = () => {
       <Styled.Company>SmartReqruiters</Styled.Company>
       <Styled.JobTitle>Frontend Engineer</Styled.JobTitle>
       <Styled.Information>
-        <span>Berlin</span>
-        <span>full-time</span>
+        <span>
+          <Icon name="Location" />
+          Berlin
+        </span>
+        <span>
+          <Icon name="Contract" />
+          Full-time
+        </span>
       </Styled.Information>
       <Styled.LinkHolder></Styled.LinkHolder>
       <Styled.Detail>
