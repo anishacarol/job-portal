@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import Icon from "../UI/Icon/Icon";
 import * as Styled from "./JobCard.styles";
 
-const JobCard = () => {
+const JobCard = ({ companyName, position }) => {
   return (
     <Styled.JobCard>
-      <Styled.Company>SmartReqruiters</Styled.Company>
-      <Styled.JobTitle>Frontend Engineer</Styled.JobTitle>
+      <Styled.Company>{companyName}</Styled.Company>
+      <Styled.JobTitle>{position}</Styled.JobTitle>
       <Styled.Information>
         <span>
           <Icon name="Location" />
