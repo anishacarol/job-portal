@@ -3,14 +3,25 @@ import { Link } from "react-router-dom";
 import Icon from "../UI/Icon/Icon";
 import * as Styled from "./JobDetails.styles";
 
-const JobDetails = () => {
+const JobDetails = ({
+  data: {
+    name,
+    company: { name: companyName },
+    jobAd: {
+      sections: {
+        jobDescription: { title, text },
+        qualifications: { title: qualificationTitle, text: qualificationText }
+      }
+    }
+  }
+}) => {
   return (
     <Styled.JobDetails>
       <Styled.LinkHolder>
-        <Link to="job-list">Back to list</Link>
+        <Link to="/job-list">Back to list</Link>
       </Styled.LinkHolder>
-      <Styled.Company>SmartReqruiters</Styled.Company>
-      <Styled.JobTitle>Frontend Engineer</Styled.JobTitle>
+      <Styled.Company>{companyName}</Styled.Company>
+      <Styled.JobTitle>{name}</Styled.JobTitle>
       <Styled.Information>
         <span>
           <Icon name="Location" />
@@ -21,11 +32,11 @@ const JobDetails = () => {
           Full-time
         </span>
       </Styled.Information>
-      <Styled.LinkHolder></Styled.LinkHolder>
-      <Styled.Detail>
-        what we need: what we need: what we need: what we need: what we need:
-        what we need:{" "}
-      </Styled.Detail>
+      <Styled.Detail
+        dangerouslySetInnerHTML={{
+          __html: `${title} ${text} ${qualificationTitle} ${qualificationText}`
+        }}
+      ></Styled.Detail>
     </Styled.JobDetails>
   );
 };

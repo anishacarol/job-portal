@@ -15,7 +15,7 @@ function App() {
           <Route path="/job-list">
             <JobListPage />
           </Route>
-          <Route path="/job-details">
+          <Route path="/job-details/:id">
             <JobDetailsPage />
           </Route>
           <Route path="/">

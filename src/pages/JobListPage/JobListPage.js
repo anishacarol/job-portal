@@ -1,11 +1,10 @@
 import React from "react";
 import JobCard from "../../components/JobCard/JobCard";
+import getUrl from "../../helper/getUrl";
 import useFetch from "../../hooks/useFetch";
 
 const JobListPage = () => {
-  const { loading, error, data } = useFetch(
-    "https://api.smartrecruiters.com/v1/companies/smartrecruiters/postings"
-  );
+  const { loading, error, data } = useFetch(getUrl().list);
 
   if (error) {
     return <h1>Error</h1>;
@@ -17,8 +16,8 @@ const JobListPage = () => {
 
   return (
     <>
-      {data.content.map((item, index) => (
-        <JobCard companyName={item.company.name} position={item.name} />
+      {data.content.map(({ id, name, company: { name: companyName } }) => (
+        <JobCard companyName={companyName} position={name} id={id} />
       ))}
     </>
   );

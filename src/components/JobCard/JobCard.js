@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Icon from "../UI/Icon/Icon";
 import * as Styled from "./JobCard.styles";
 
-const JobCard = ({ companyName, position }) => {
+const JobCard = ({ companyName, position, id }) => {
   return (
     <Styled.JobCard>
       <Styled.Company>{companyName}</Styled.Company>
@@ -19,7 +19,7 @@ const JobCard = ({ companyName, position }) => {
         </span>
       </Styled.Information>
       <Styled.LinkHolder>
-        <Link to="job-details">Read more..</Link>
+        <Link to={`job-details/${id}`}>Read more..</Link>
       </Styled.LinkHolder>
     </Styled.JobCard>
   );
