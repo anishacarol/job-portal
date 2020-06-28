@@ -16,6 +16,7 @@ const JobDetailsPage = () => {
     return <h1>Spinner</h1>;
   }
 
+  console.log(data);
   return <JobDetails data={data} />;
 };
 
