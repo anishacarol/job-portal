@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
+import Error from "../../components/Error/Error";
 import JobCard from "../../components/JobCard/JobCard";
+import Spinner from "../../components/Spinner/Spinner";
 import Dropdown from "../../components/UI/Dropdown/Dropdown";
 import { getFilterJobList } from "../../helper/getFilterJobList";
 import { getJobListData } from "../../helper/getFormattedJobList";
@@ -35,11 +37,11 @@ const JobListPage = () => {
   }, [data]);
 
   if (error) {
-    return <h1>Error</h1>;
+    return <Error />;
   }
 
   if (loading || !data || !jobList) {
-    return <h1>Spinner</h1>;
+    return <Spinner />;
   }
 
   const jobListElements = jobList.map(

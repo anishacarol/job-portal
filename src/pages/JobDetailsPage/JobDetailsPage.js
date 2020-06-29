@@ -1,19 +1,20 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import Error from "../../components/Error/Error";
 import JobDetails from "../../components/JobDetails/JobDetails";
+import Spinner from "../../components/Spinner/Spinner";
 import getUrl from "../../helper/getUrl";
 import useFetch from "../../hooks/useFetch";
 
 const JobDetailsPage = () => {
   let { id } = useParams();
   const { loading, error, data } = useFetch(getUrl(id).details);
-  console.log(":::::", data);
   if (error) {
-    return <h1>Error</h1>;
+    return <Error />;
   }
 
   if (loading || !data) {
-    return <h1>Spinner</h1>;
+    return <Spinner />;
   }
 
   return <JobDetails data={data} />;
