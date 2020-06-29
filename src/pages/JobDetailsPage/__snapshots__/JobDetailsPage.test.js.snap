@@ -1,32 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<JobDetails/> renders JobDetails component properly 1`] = `
+exports[`<JobDetailsPage/> renders Error component if there is any error during api call 1`] = `
+<DocumentFragment>
+  <h4
+    class="sc-AxjAm gxygnu"
+    data-testid="error"
+  >
+    Something went wrong. Please try again!
+  </h4>
+</DocumentFragment>
+`;
+
+exports[`<JobDetailsPage/> renders JobDetailsPage component properly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxirZ bGKnIm"
+    class="sc-AxiKw gZHzBK"
   >
     <div
-      class="sc-AxgMl dxjCFT"
+      class="sc-AxheI laZrwZ"
     >
       <a
-        class="sc-AxjAm jqfoEo"
+        class="sc-AxirZ fLGdcj"
         href="/job-list"
       >
         &lt; Back to list
       </a>
     </div>
     <span
-      class="sc-AxiKw jCNDMu"
+      class="sc-AxhCb caBKiG"
     >
       job gmbh
     </span>
     <span
-      class="sc-AxhCb bMYWnt"
+      class="sc-AxhUy eCGZTg"
     >
       frontend
     </span>
     <div
-      class="sc-AxhUy jCxnSm"
+      class="sc-AxgMl dxSYNc"
     >
       <span>
         <svg
@@ -84,10 +95,22 @@ exports[`<JobDetails/> renders JobDetails component properly 1`] = `
       </span>
     </div>
     <div
-      class="sc-AxheI eFhYqI"
+      class="sc-Axmtr cmuyqT"
     >
          
     </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<JobDetailsPage/> renders Loader during async call 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxmLO ktunra"
+  >
+    <div
+      class="loader"
+    />
   </div>
 </DocumentFragment>
 `;

@@ -5,6 +5,9 @@ import JobDetails from "./JobDetails";
 
 const mockData = {
   name: "frontend",
+  location: { city: "Berlin" },
+  customField: [{ fieldId: "COUNTRY", valueLabel: "Germany" }],
+  typeOfEmployment: { label: "fullTime" },
   company: { name: "job gmbh" },
   jobAd: {
     sections: {
@@ -12,9 +15,6 @@ const mockData = {
       qualifications: { title: "", text: "" }
     }
   }
-
-  //   location: "berlin",
-  //   employment_type: "full_time",
 };
 
 describe("<JobDetails/>", () => {

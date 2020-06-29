@@ -9,6 +9,7 @@ import useFetch from "../../hooks/useFetch";
 const JobDetailsPage = () => {
   let { id } = useParams();
   const { loading, error, data } = useFetch(getUrl(id).details);
+
   if (error) {
     return <Error />;
   }

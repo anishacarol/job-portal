@@ -6,7 +6,9 @@ const Dropdown = ({ arr, onChangeHandler, name, defaultText }) => {
     <Styled.Select name={name} onChange={onChangeHandler}>
       <Styled.Option value="all">{defaultText}</Styled.Option>
       {arr.map(item => (
-        <Styled.Option value={item}>{item}</Styled.Option>
+        <Styled.Option key={item} value={item}>
+          {item}
+        </Styled.Option>
       ))}
     </Styled.Select>
   );

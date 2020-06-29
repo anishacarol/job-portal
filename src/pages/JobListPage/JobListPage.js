@@ -45,9 +45,9 @@ const JobListPage = () => {
   }
 
   const jobListElements = jobList.map(
-    ({ id, companyName, position, country, city, employmentType }) => (
+    ({ id, companyName, position, country, city, employmentType }, index) => (
       <JobCard
-        key={id}
+        key={`${id}-${index}`}
         companyName={companyName}
         position={position}
         id={id}

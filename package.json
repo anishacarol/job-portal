@@ -37,5 +37,13 @@
   },
   "devDependencies": {
     "react-test-renderer": "^16.13.1"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/__snapshots__/",
+      "/src/index.js*",
+      "/src/serviceWorker.js"
+    ]
   }
 }

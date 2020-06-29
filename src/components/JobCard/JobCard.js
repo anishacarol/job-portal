@@ -24,7 +24,6 @@ const JobCard = ({
           <span>
             <Icon name="Contract" />
             {typeOfEmployment}
-            {console.log(typeOfEmployment)}
           </span>
         </Styled.Information>
       </Styled.JobInfo>
