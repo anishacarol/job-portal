@@ -3,29 +3,30 @@
 exports[`<JobDetails/> renders JobDetails component properly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxjAm dNRDmd"
+    class="sc-AxirZ bGKnIm"
   >
     <div
-      class="sc-AxhUy hkxCKR"
+      class="sc-AxgMl dxjCFT"
     >
       <a
+        class="sc-AxjAm jqfoEo"
         href="/job-list"
       >
-        Back to list
+        &lt; Back to list
       </a>
     </div>
     <span
-      class="sc-AxirZ eOrIwq"
+      class="sc-AxiKw jCNDMu"
     >
       job gmbh
     </span>
     <span
-      class="sc-AxiKw eVlsWl"
+      class="sc-AxhCb bMYWnt"
     >
       frontend
     </span>
     <div
-      class="sc-AxhCb jQEIXT"
+      class="sc-AxhUy jCxnSm"
     >
       <span>
         <svg
@@ -49,7 +50,6 @@ exports[`<JobDetails/> renders JobDetails component properly 1`] = `
             />
           </g>
         </svg>
-        Berlin
       </span>
       <span>
         <svg
@@ -83,7 +83,7 @@ exports[`<JobDetails/> renders JobDetails component properly 1`] = `
       </span>
     </div>
     <div
-      class="sc-AxgMl kiBCZK"
+      class="sc-AxheI eFhYqI"
     >
          
     </div>

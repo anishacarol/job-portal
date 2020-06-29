@@ -1,13 +1,11 @@
-export const getJobListData = arr => {
-  const getCustomFiledByKey = (fieldArr, fieldId) => {
-    return fieldArr.find(item => item.fieldId === fieldId).valueLabel;
-  };
+import { getCustomFieldByKey } from "./getCustomFieldByKey";
 
+export const getJobListData = arr => {
   const countries = {};
   const departments = {};
 
   const joblist = arr.map(item => {
-    const country = getCustomFiledByKey(item.customField, "COUNTRY");
+    const country = getCustomFieldByKey(item.customField, "COUNTRY");
     countries[country] = country;
     departments[item.department.label] = item.department.label;
 
@@ -16,8 +14,9 @@ export const getJobListData = arr => {
       position: item.name,
       companyName: item.company.name,
       country: country,
+      city: item.location.city,
       department: item.department.label,
-      employementType: item.typeOfEmployment.label
+      employmentType: item.typeOfEmployment.label
     };
   });
 

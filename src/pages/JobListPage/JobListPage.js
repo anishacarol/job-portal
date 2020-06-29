@@ -43,13 +43,14 @@ const JobListPage = () => {
   }
 
   const jobListElements = jobList.map(
-    ({ id, companyName, position, country, employmentType }) => (
+    ({ id, companyName, position, country, city, employmentType }) => (
       <JobCard
         key={id}
         companyName={companyName}
         position={position}
         id={id}
-        location={country}
+        city={city}
+        country={country}
         typeOfEmployment={employmentType}
       />
     )

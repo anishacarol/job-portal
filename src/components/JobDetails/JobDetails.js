@@ -1,4 +1,5 @@
 import React from "react";
+import { getCustomFieldByKey } from "../../helper/getCustomFieldByKey";
 import Icon from "../UI/Icon/Icon";
 import { ALink as Link } from "./../UI/Link/Link";
 import * as Styled from "./JobDetails.styles";
@@ -6,6 +7,9 @@ import * as Styled from "./JobDetails.styles";
 const JobDetails = ({
   data: {
     name,
+    location: { city },
+    customField,
+    typeOfEmployment: { label },
     company: { name: companyName },
     jobAd: {
       sections: {
@@ -25,11 +29,11 @@ const JobDetails = ({
       <Styled.Information>
         <span>
           <Icon name="Location" />
-          Berlin
+          {`${city} , ${getCustomFieldByKey(customField, "COUNTRY")}`}
         </span>
         <span>
           <Icon name="Contract" />
-          Full-time
+          {label}
         </span>
       </Styled.Information>
       <Styled.Detail

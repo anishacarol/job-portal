@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const JobCard = styled.div`
   min-height: 90px;
   background: #fff;
-  padding: 30px 50px;
+  padding: 15px 50px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   margin-top: 15px;
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
@@ -21,10 +22,14 @@ export const Company = styled.span`
 export const JobTitle = styled.span`
   display: block;
   color: rgb(28, 28, 28);
-  color: rgb(28, 28, 28);
   font-weight: 600;
   margin-bottom: 16px;
-  font-size: 16px;
+  font-size: 18px;
+`;
+
+export const JobInfo = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Information = styled.div`
@@ -48,7 +53,8 @@ export const Information = styled.div`
 `;
 
 export const LinkHolder = styled.div`
-  align-self: flex-end;
+  align-self: center;
+  margin-top: 50px;
   @media (max-width: 768px) {
     display: flex;
     width: 100%;
