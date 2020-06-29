@@ -1,13 +1,14 @@
 import React from "react";
-// import * as Styled from "./Dropdown.styles";
+import * as Styled from "./Dropdown.styles";
 
-const Dropdown = ({ arr, onChangeHandler, name }) => {
+const Dropdown = ({ arr, onChangeHandler, name, defaultText }) => {
   return (
-    <select name={name} onChange={onChangeHandler}>
+    <Styled.Select name={name} onChange={onChangeHandler}>
+      <Styled.Option value="all">{defaultText}</Styled.Option>
       {arr.map(item => (
-        <option value={item}>{item}</option>
+        <Styled.Option value={item}>{item}</Styled.Option>
       ))}
-    </select>
+    </Styled.Select>
   );
 };
 

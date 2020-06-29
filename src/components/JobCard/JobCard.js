@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Icon from "../UI/Icon/Icon";
+import { ALink as Link } from "./../UI/Link/Link";
 import * as Styled from "./JobCard.styles";
 
 const JobCard = ({ companyName, position, id, location, typeOfEmployment }) => {

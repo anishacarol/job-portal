@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Icon from "../UI/Icon/Icon";
+import { ALink as Link } from "./../UI/Link/Link";
 import * as Styled from "./JobDetails.styles";
 
 const JobDetails = ({
@@ -18,7 +18,7 @@ const JobDetails = ({
   return (
     <Styled.JobDetails>
       <Styled.LinkHolder>
-        <Link to="/job-list">Back to list</Link>
+        <Link to="/job-list">{`< Back to list`}</Link>
       </Styled.LinkHolder>
       <Styled.Company>{companyName}</Styled.Company>
       <Styled.JobTitle>{name}</Styled.JobTitle>

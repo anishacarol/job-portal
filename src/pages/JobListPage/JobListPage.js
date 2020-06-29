@@ -5,29 +5,32 @@ import { getFilterJobList } from "../../helper/getFilterJobList";
 import { getJobListData } from "../../helper/getFormattedJobList";
 import getUrl from "../../helper/getUrl";
 import useFetch from "../../hooks/useFetch";
-
-let jobListData = null;
+import * as Styled from "./JobListPage.styles";
 
 const JobListPage = () => {
   const [jobList, setJobList] = useState(null);
   const { loading, error, data } = useFetch(getUrl().list);
   const filter = useRef({});
+  const jobListData = useRef(null);
 
   const onChangeHandler = e => {
     const { name, value } = e.target;
-    if (value !== 0) {
+    if (value === "all") {
+      delete filter.current[name];
+    } else {
       filter.current[name] = value;
     }
-    console.log(filter.current);
-
-    const result = getFilterJobList(jobListData.joblist, filter.current);
+    const result = getFilterJobList(
+      jobListData.current.joblist,
+      filter.current
+    );
     setJobList(result);
   };
 
   useEffect(() => {
     if (data) {
-      jobListData = getJobListData(data.content);
-      data && setJobList(jobListData.joblist);
+      jobListData.current = getJobListData(data.content);
+      data && setJobList(jobListData.current.joblist);
     }
   }, [data]);
 
@@ -39,28 +42,48 @@ const JobListPage = () => {
     return <h1>Spinner</h1>;
   }
 
+  const jobListElements = jobList.map(
+    ({ id, companyName, position, country, employmentType }) => (
+      <JobCard
+        key={id}
+        companyName={companyName}
+        position={position}
+        id={id}
+        location={country}
+        typeOfEmployment={employmentType}
+      />
+    )
+  );
+
   return (
     <>
-      <Dropdown
-        name="country"
-        arr={jobListData.countries}
-        onChangeHandler={onChangeHandler}
-      />
-      <Dropdown
-        name="department"
-        arr={jobListData.departments}
-        onChangeHandler={onChangeHandler}
-      />
-      {jobList.map(({ id, companyName, position, country, employmentType }) => (
-        <JobCard
-          key={id}
-          companyName={companyName}
-          position={position}
-          id={id}
-          location={country}
-          typeOfEmployment={employmentType}
-        />
-      ))}
+      <Styled.FilterWrapper>
+        <Styled.Filters>
+          <label>Filter By</label>
+          <Dropdown
+            name="country"
+            arr={jobListData.current.countries}
+            onChangeHandler={onChangeHandler}
+            defaultText="All countries"
+          />
+          <Dropdown
+            name="department"
+            arr={jobListData.current.departments}
+            onChangeHandler={onChangeHandler}
+            defaultText="All departments"
+          />
+        </Styled.Filters>
+        <Styled.FiltersResultCount>
+          <label>
+            Total jobs: <span>{jobList.length}</span>
+          </label>
+        </Styled.FiltersResultCount>
+      </Styled.FilterWrapper>
+      {jobList.length === 0 ? (
+        <h1>No Jobs available for the selected filters</h1>
+      ) : (
+        <>{jobListElements}</>
+      )}
     </>
   );
 };
