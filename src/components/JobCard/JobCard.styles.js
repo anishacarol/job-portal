@@ -11,6 +11,9 @@ export const JobCard = styled.div`
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
   }
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const Company = styled.span`
@@ -37,7 +40,7 @@ export const Information = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     span {
-      margin-bottom: 30px;
+      margin-bottom: 18px;
     }
   }
   span {
@@ -58,6 +61,7 @@ export const LinkHolder = styled.div`
   @media (max-width: 768px) {
     display: flex;
     width: 100%;
+    margin-top: 0;
     text-align: center;
     a {
       width: 100%;
