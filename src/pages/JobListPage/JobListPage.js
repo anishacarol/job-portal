@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Error from "../../components/Error/Error";
 import JobCard from "../../components/JobCard/JobCard";
 import Spinner from "../../components/Spinner/Spinner";
@@ -9,38 +9,38 @@ import getUrl from "../../helper/getUrl";
 import useFetch from "../../hooks/useFetch";
 import * as Styled from "./JobListPage.styles";
 
+const filter = {};
+let data = null;
+
 const JobListPage = () => {
   const [jobList, setJobList] = useState(null);
-  const { loading, error, data } = useFetch(getUrl().list);
-  const filter = useRef({});
-  const jobListData = useRef(null);
+  const { loading, error, data: APIResponse } = useFetch(getUrl().list);
 
   const onChangeHandler = e => {
     const { name, value } = e.target;
+
     if (value === "all") {
-      delete filter.current[name];
+      delete filter[name];
     } else {
-      filter.current[name] = value;
+      filter[name] = value;
     }
-    const result = getFilterJobList(
-      jobListData.current.joblist,
-      filter.current
-    );
+
+    const result = getFilterJobList(data.joblist, filter);
     setJobList(result);
   };
 
   useEffect(() => {
-    if (data) {
-      jobListData.current = getJobListData(data.content);
-      data && setJobList(jobListData.current.joblist);
+    if (APIResponse) {
+      data = getJobListData(APIResponse.content);
+      APIResponse && setJobList(data.joblist);
     }
-  }, [data]);
+  }, [APIResponse]);
 
   if (error) {
     return <Error />;
   }
 
-  if (loading || !data || !jobList) {
+  if (loading || !APIResponse || !jobList) {
     return <Spinner />;
   }
 
@@ -65,13 +65,13 @@ const JobListPage = () => {
           <label>Filter By</label>
           <Dropdown
             name="country"
-            arr={jobListData.current.countries}
+            arr={data.countries}
             onChangeHandler={onChangeHandler}
             defaultText="All countries"
           />
           <Dropdown
             name="department"
-            arr={jobListData.current.departments}
+            arr={data.departments}
             onChangeHandler={onChangeHandler}
             defaultText="All departments"
           />
