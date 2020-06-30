@@ -26,6 +26,20 @@ const mockData = {
           qualifications: { title: "", text: "" }
         }
       }
+    },
+    {
+      name: "backend",
+      location: { city: "London" },
+      customField: [{ fieldId: "COUNTRY", valueLabel: "UK" }],
+      typeOfEmployment: { label: "partime" },
+      company: { name: "london gmbh" },
+      department: { label: "Customer Dep" },
+      jobAd: {
+        sections: {
+          jobDescription: { title: "", text: "" },
+          qualifications: { title: "", text: "" }
+        }
+      }
     }
   ]
 };
@@ -39,7 +53,7 @@ describe("<JobListPage/>", () => {
       data: mockData
     });
 
-    const { asFragment, getByText, container } = render(
+    const { asFragment, getByText } = render(
       <MemoryRouter>
         <JobListPage />
       </MemoryRouter>
@@ -60,14 +74,41 @@ describe("<JobListPage/>", () => {
     expect(employment_type).toBeInTheDocument();
 
     expect(asFragment()).toMatchSnapshot();
+  });
 
-    const selectComp = container.querySelectorAll("select[name='country']")[0];
+  it("should render filter properly ", async () => {
+    useFetch.mockReturnValue({
+      loading: false,
+      data: mockData
+    });
 
-    fireEvent.change(selectComp, { target: { value: "all" } });
-    expect(selectComp.value).toBe("all");
+    const { getByText, container } = render(
+      <MemoryRouter>
+        <JobListPage />
+      </MemoryRouter>
+    );
 
-    fireEvent.change(selectComp, { target: { value: "Germany" } });
-    expect(selectComp.value).toBe("Germany");
+    await waitForElement(() => getByText("frontend"));
+
+    const countrySelect = container.querySelectorAll(
+      "select[name='country']"
+    )[0];
+    const departmentSelect = container.querySelectorAll(
+      "select[name='department']"
+    )[0];
+
+    fireEvent.change(countrySelect, { target: { value: "all" } });
+    expect(countrySelect.value).toBe("all");
+
+    fireEvent.change(countrySelect, { target: { value: "Germany" } });
+    expect(countrySelect.value).toBe("Germany");
+
+    fireEvent.change(departmentSelect, { target: { value: "Customer Dep" } });
+    expect(departmentSelect.value).toBe("Customer Dep");
+
+    await waitForElement(() =>
+      getByText("No Jobs available for the selected filters")
+    );
   });
 
   it("renders Loader during async call", async () => {

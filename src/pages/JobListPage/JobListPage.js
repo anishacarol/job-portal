@@ -83,7 +83,9 @@ const JobListPage = () => {
         </Styled.FiltersResultCount>
       </Styled.FilterWrapper>
       {jobList.length === 0 ? (
-        <h1>No Jobs available for the selected filters</h1>
+        <h1 data-testid="no-data">
+          No Jobs available for the selected filters
+        </h1>
       ) : (
         <>{jobListElements}</>
       )}
