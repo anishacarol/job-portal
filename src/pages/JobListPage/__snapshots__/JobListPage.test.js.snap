@@ -14,16 +14,16 @@ exports[`<JobListPage/> renders Error component if there is any error during api
 exports[`<JobListPage/> renders JobListPage component properly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fzpans gzcZnk"
+    class="sc-fzpans ifyIfw"
   >
     <div
-      class="sc-fzplWN jlHgKn"
+      class="sc-fzplWN DbJwA"
     >
       <label>
         Filter By
       </label>
       <select
-        class="sc-fzozJi kfkfOQ"
+        class="sc-fzozJi fRKIgy"
         name="country"
       >
         <option
@@ -40,7 +40,7 @@ exports[`<JobListPage/> renders JobListPage component properly 1`] = `
         </option>
       </select>
       <select
-        class="sc-fzozJi kfkfOQ"
+        class="sc-fzozJi fRKIgy"
         name="department"
       >
         <option
@@ -58,7 +58,7 @@ exports[`<JobListPage/> renders JobListPage component properly 1`] = `
       </select>
     </div>
     <div
-      class="sc-fznyAO ktdA-dN"
+      class="sc-fznyAO joCykK"
     >
       <label>
         Total jobs: 
@@ -69,7 +69,7 @@ exports[`<JobListPage/> renders JobListPage component properly 1`] = `
     </div>
   </div>
   <div
-    class="sc-AxiKw egBFSk"
+    class="sc-AxiKw jGjjox"
   >
     <div
       class="sc-AxgMl bKFcdD"
@@ -85,7 +85,7 @@ exports[`<JobListPage/> renders JobListPage component properly 1`] = `
         frontend
       </span>
       <div
-        class="sc-AxheI iRyTKk"
+        class="sc-AxheI gCQCky"
       >
         <span>
           <svg
@@ -144,10 +144,10 @@ exports[`<JobListPage/> renders JobListPage component properly 1`] = `
       </div>
     </div>
     <div
-      class="sc-Axmtr dQZpkb"
+      class="sc-Axmtr fCSziQ"
     >
       <a
-        class="sc-AxirZ fLGdcj"
+        class="sc-AxirZ jHwYVq"
         href="/job-details/undefined"
       >
         Read more &gt;

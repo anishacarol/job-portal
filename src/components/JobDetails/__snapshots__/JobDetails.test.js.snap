@@ -9,7 +9,7 @@ exports[`<JobDetails/> renders JobDetails component properly 1`] = `
       class="sc-AxgMl dxjCFT"
     >
       <a
-        class="sc-AxjAm jqfoEo"
+        class="sc-AxjAm fziQwd"
         href="/job-list"
       >
         &lt; Back to list

@@ -27,38 +27,20 @@ export const Select = styled.select`
   outline: none;
   margin-right: 11px;
 
-  /* &::-ms-expand {
-  display: none;
-  } */
   &:hover {
     border-color: #888;
   }
+
   &:focus {
     outline: none;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    margin-top: 15px;
   }
 `;
 
 export const Option = styled.option`
   font-weight: normal;
 `;
-
-//   .select
-//   .select
-//   .select:focus {
-//     /* box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7); */
-//     /* box-shadow: 0 0 0 3px -moz-mac-focusring; */
-//
-//   }
-//   .select option {
-//   }
-
-//   .control-select {
-//     margin-top: 12px;
-//   }
-
-//   @media only screen and (max-width: 700px) {
-//     .select,
-//     .control-select {
-//       width: 100%;
-//     }
-//   }

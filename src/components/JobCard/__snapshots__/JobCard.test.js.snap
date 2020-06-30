@@ -3,7 +3,7 @@
 exports[`<JobCard/> renders JobCard component properly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxirZ bRTRow"
+    class="sc-AxirZ ffkYTh"
   >
     <div
       class="sc-AxhUy gfXgDx"
@@ -19,7 +19,7 @@ exports[`<JobCard/> renders JobCard component properly 1`] = `
         frontend
       </span>
       <div
-        class="sc-AxgMl dwjUUW"
+        class="sc-AxgMl keSmOc"
       >
         <span>
           <svg
@@ -77,10 +77,10 @@ exports[`<JobCard/> renders JobCard component properly 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxheI iyCBzY"
+      class="sc-AxheI kpmTr"
     >
       <a
-        class="sc-AxjAm jqfoEo"
+        class="sc-AxjAm fziQwd"
         href="/job-details/undefined"
       >
         Read more &gt;

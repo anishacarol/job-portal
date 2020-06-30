@@ -5,7 +5,6 @@ export const ALink = styled(Link)`
   background-color: rgb(41, 189, 186);
   color: rgb(255, 255, 255);
   cursor: pointer;
-  margin-top: 35px;
   border-width: initial;
   border-color: initial;
   outline: none;
