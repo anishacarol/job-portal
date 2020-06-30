@@ -10,12 +10,10 @@ File                         |  % Stmts | % Branch |  % Funcs |  % Lines | Uncov
 All files                    |      100 |      100 |      100 |      100 |                   |
 
 - Responsive design
-- deployed in githuh pages [DemoURL](https://anishacarol.github.io/job-list)
+- deployed in github pages [DemoURL](https://anishacarol.github.io/job-list)
 
 
-## Available Scripts
-
-In the project directory, you can run:
+## To run the app
 
 ### `yarn install`
 
