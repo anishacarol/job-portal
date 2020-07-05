@@ -9,7 +9,7 @@ exports[`<JobDetails/> renders JobDetails component properly 1`] = `
       class="sc-AxgMl dxjCFT"
     >
       <a
-        class="sc-AxjAm fziQwd"
+        class="sc-AxjAm govDYK"
         href="/job-list"
       >
         &lt; Back to list
@@ -50,7 +50,7 @@ exports[`<JobDetails/> renders JobDetails component properly 1`] = `
             />
           </g>
         </svg>
-        Berlin , Germany
+        berlin , Germany
       </span>
       <span>
         <svg
@@ -80,7 +80,7 @@ exports[`<JobDetails/> renders JobDetails component properly 1`] = `
             </g>
           </g>
         </svg>
-        fullTime
+        full_Time
       </span>
     </div>
     <div

@@ -159,7 +159,7 @@ exports[`<JobListPage/> renders JobListPage component properly 1`] = `
       class="sc-Axmtr fCSziQ"
     >
       <a
-        class="sc-AxirZ jHwYVq"
+        class="sc-AxirZ gvCxal"
         href="/job-details/undefined"
       >
         Read more &gt;
@@ -245,7 +245,7 @@ exports[`<JobListPage/> renders JobListPage component properly 1`] = `
       class="sc-Axmtr fCSziQ"
     >
       <a
-        class="sc-AxirZ jHwYVq"
+        class="sc-AxirZ gvCxal"
         href="/job-details/undefined"
       >
         Read more &gt;

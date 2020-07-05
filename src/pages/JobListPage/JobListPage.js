@@ -32,7 +32,7 @@ const JobListPage = () => {
   useEffect(() => {
     if (APIResponse) {
       data = getJobListData(APIResponse.content);
-      APIResponse && setJobList(data.joblist);
+      setJobList(data.joblist);
     }
   }, [APIResponse]);
 

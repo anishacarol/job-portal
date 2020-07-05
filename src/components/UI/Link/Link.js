@@ -5,10 +5,6 @@ export const ALink = styled(Link)`
   background-color: rgb(41, 189, 186);
   color: rgb(255, 255, 255);
   cursor: pointer;
-  border-width: initial;
-  border-color: initial;
-  outline: none;
-  font: inherit inherit inherit inherit inherit inherit inherit inherit inherit;
   padding: 12px 30px;
   text-decoration: none;
   font-weight: 600;

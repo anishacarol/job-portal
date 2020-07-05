@@ -5,9 +5,9 @@ import JobCard from "./JobCard";
 
 const mockData = {
   position: "frontend",
-  companyName: "job gmbh"
-  //   location: "berlin",
-  //   employment_type: "full_time"
+  companyName: "job gmbh",
+  country: "berlin",
+  typeOfEmployment: "full_time"
 };
 
 describe("<JobCard/>", () => {
@@ -19,13 +19,13 @@ describe("<JobCard/>", () => {
     );
     const position = getByText(/frontend/i);
     const companyName = getByText(/job gmbh/i);
-    // const location = getByText(/berlin/i);
-    // const employment_type = getByText(/Full time/i);
+    const country = getByText(/berlin/i);
+    const typeOfEmployment = getByText(/full_time/i);
 
     expect(position).toBeInTheDocument();
     expect(companyName).toBeInTheDocument();
-    // expect(location).toBeInTheDocument();
-    // expect(employment_type).toBeInTheDocument();
+    expect(country).toBeInTheDocument();
+    expect(typeOfEmployment).toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -5,9 +5,9 @@ import JobDetails from "./JobDetails";
 
 const mockData = {
   name: "frontend",
-  location: { city: "Berlin" },
+  location: { city: "berlin" },
   customField: [{ fieldId: "COUNTRY", valueLabel: "Germany" }],
-  typeOfEmployment: { label: "fullTime" },
+  typeOfEmployment: { label: "full_Time" },
   company: { name: "job gmbh" },
   jobAd: {
     sections: {
@@ -26,13 +26,13 @@ describe("<JobDetails/>", () => {
     );
     const name = getByText(/frontend/i);
     const companyName = getByText(/job gmbh/i);
-    // const location = getByText(/berlin/i);
-    // const employment_type = getByText(/Full time/i);
+    const city = getByText(/berlin/i);
+    const typeOfEmployment = getByText(/full_time/i);
 
     expect(name).toBeInTheDocument();
     expect(companyName).toBeInTheDocument();
-    // expect(location).toBeInTheDocument();
-    // expect(employment_type).toBeInTheDocument();
+    expect(city).toBeInTheDocument();
+    expect(typeOfEmployment).toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
   });
 });

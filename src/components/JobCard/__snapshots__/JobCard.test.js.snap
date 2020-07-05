@@ -43,7 +43,7 @@ exports[`<JobCard/> renders JobCard component properly 1`] = `
               />
             </g>
           </svg>
-          undefined , undefined
+          undefined , berlin
         </span>
         <span>
           <svg
@@ -73,6 +73,7 @@ exports[`<JobCard/> renders JobCard component properly 1`] = `
               </g>
             </g>
           </svg>
+          full_time
         </span>
       </div>
     </div>
@@ -80,7 +81,7 @@ exports[`<JobCard/> renders JobCard component properly 1`] = `
       class="sc-AxheI kpmTr"
     >
       <a
-        class="sc-AxjAm fziQwd"
+        class="sc-AxjAm govDYK"
         href="/job-details/undefined"
       >
         Read more &gt;
